@@ -1,0 +1,56 @@
+
+.input-keyboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.alphabet-container {
+  margin: 15px 5px 15px 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 350px;
+  gap: 10px;
+}
+
+.question-container {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin: 5px 0 5px 0;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.score {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+}
+
+@media screen and (max-width: 520px) {
+  .score {
+    position: absolute;
+    top:75%;
+  }
+}
+
+
+.btn_right{
+    position: absolute;
+    top: 40%;
+    right: 5%;
+}
+
+.btn_left{
+    position: absolute;
+    top: 40%;
+    left: 5%;
+}
