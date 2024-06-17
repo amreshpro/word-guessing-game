@@ -6,6 +6,7 @@ import { useState } from "react";
 import Score from "./components/score";
 import Text from "./components/text";
 import "./style.css";
+import Hint from "./components/hint";
 const ALPHABET = [
   "A",
   "B",
@@ -37,7 +38,12 @@ const ALPHABET = [
 
 function WordGuessingGame() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
- 
+ const [questionBank, setQuestionBank] = useState(structuredClone(QUESTIONS))
+ const [answerByUser, setAnswerByUser] = useState('') 
+
+function onButtonClick(value){
+  console.log(value)
+}
 
   function onLeftClick() {
     if (currentQuestionIndex > 0) {
@@ -51,14 +57,17 @@ function WordGuessingGame() {
       console.log("right clicked");
     }
   }
+
+console.log(answerByUser)
+
   return (
     <div>
       <div className="input-keyboard">
 
         <div className="input-container">
-          {QUESTIONS[currentQuestionIndex].hint.split("")?.map((char, i) => {
+          {questionBank[currentQuestionIndex].hint.split("")?.map((char, i) => {
             console.log("render",i);
-            return <Input key={i} value={char} />;
+            return <Hint key={i} value={char} setAnswerByUser={setAnswerByUser} />;
           })}
         </div>
 
@@ -67,6 +76,7 @@ function WordGuessingGame() {
             return (
               <Button
                 key={i}
+                onClick={onButtonClick}
                 label={alphabet}
                 type={Button.ButtonType.ROUNDED}
               />

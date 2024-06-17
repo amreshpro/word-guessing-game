@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import "./style.css"
 
-function Input({value=''}) {
+function Input({value='',maxLength=524288,onInput=()=>{}}) {
   return (
-<input type="text" defaultValue={value} />
+<input type="text" onInput={onInput} defaultValue={value} maxLength={maxLength} />
 )
 }
 export default Input

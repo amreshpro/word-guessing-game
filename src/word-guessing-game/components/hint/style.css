@@ -1,0 +1,10 @@
+.hint-text{
+    padding: 5px;
+    background: #111;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    border: 2px solid salmon;
+}

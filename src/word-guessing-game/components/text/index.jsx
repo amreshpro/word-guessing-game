@@ -7,9 +7,9 @@ const TextSize = {
 };
 
 
-function Text({ size = TextSize.SMALL, children, content = "" }) {
-  const className = `text_${size}`;
-  return <div className={className}>{content ? content : children}</div>;
+function Text({ size = TextSize.SMALL, children, content = "" ,className=''}) {
+  const updatedClassName = `text_${size}  ${className}`;
+  return <div className={updatedClassName}>{content ? content : children}</div>;
 }
 
 

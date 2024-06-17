@@ -6,9 +6,11 @@ const ButtonType = {
 }
 
 function Button({label='',className='',children,type=ButtonType.CIRCULAR,onClick=()=>{}}) {
-
+function handleButtonClick(){
+  onClick(label)
+}
   return (
-    <button onClick={onClick} className={`${className} btn_${type} `} >{label? label :children}</button>
+    <button onClick={handleButtonClick} className={`${className} btn_${type} `} >{label? label :children}</button>
   )
 }
 
